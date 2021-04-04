@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
                 _playerAnimator.SetBool("Run", true);
             }
 
-            if(Vector3.Distance(transform.position, _navMeshAgent.destination) <= _navMeshAgent.stoppingDistance)
+            if(Vector3.Distance(transform.position, _navMeshAgent.destination) <= _navMeshAgent.stoppingDistance && _playerAnimator.GetBool("Run"))
             {
                 _playerAnimator.SetBool("Run", false);
                 _navMeshAgent.destination = transform.position;
